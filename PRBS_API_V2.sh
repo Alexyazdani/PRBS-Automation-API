@@ -82,26 +82,3 @@ function GetDomPower() {
 
 #END OF FUNCTIONS
 
-
-
-
-
-
-
-
-Test platform hardware fed switch 1 port 50 phy prbs stop prbs-31
-
-
-
-Test platform hardware fed switch 1 port 49 phy prbs start prbs-31
-Test platform hardware fed switch 1 port 49 phy prbs show-lock-stats
-
-
-templock='null'
-for x in `sh int | nl | cut -d":" -f 1 | head 5`; do
-    if [[ 'Aquired' != $templock ]]; then
-        Test platform hardware fed switch 1 port $port phy prbs start prbs-31
-        templock=`Test platform hardware fed switch 1 port $port phy prbs show-lock-stats | grep lock | cut -d ' ' -f 7`
-    fi
-done
-
