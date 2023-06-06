@@ -11,13 +11,13 @@ The first exmaple file applies to a rather simple DUT.  The second example file,
 Functions:
 
 1. SerPortEnabledState() - 
-  Enable or disable desired port, optional arguement to set port speed for dual rate optics
+  Enable or disable desired port, optional arguement to set port speed for dual rate optics.
   
 2. SetVoltageMargin() - 
   Margin the voltage.
   
 3. SetPRBSPattern() - 
-  Start generating PRBS and continue to generate until lock status is validated
+  Start generating PRBS and continue to generate until lock status is validated.
 
 4. StartPRBSStatistics() - 
   Start measuring statistics: set error count to 0 and initialize timestamp.
@@ -26,4 +26,4 @@ Functions:
   Fetch BER statistics, ie, error counts, timestamps, and lock status.  output in a stout format.
 
 6. GetDomPower() - 
-  Fetch the power from the Digital Optical Monitor
+  Fetch the power from the Digital Optical Monitor.
