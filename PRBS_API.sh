@@ -12,6 +12,7 @@ configure terminal | null
         end
 ti=`show clock | cut -d ' ' -f 1 | cut -d '*' -f 2`
 totalerr=0
+copperports=48
 
 function SetPortEnabledState() {
     interface=$1
@@ -39,7 +40,7 @@ function SetVoltageMargin() {
 function SetPRBSPattern() {
     interface=$1
     pattern=$2
-    let port = 48 + $interface
+    let port = $copperports + $interface
     templock='null'
     for x in `sh int | nl | cut -d":" -f 1 | head 5`; do
         if [[ 'Aquired' != $templock ]]; then
@@ -57,7 +58,7 @@ function StartPRBSStatistics() {
 
 function GetPRBSStatistics() {
     interface=$1
-    let port = 48 + $interface
+    let port = $copperports + $interface
     errhex=`Test platform hardware fed switch 1 port $port phy prbs show-lock-stats | grep Error | cut -d 'x' -f 2`
     tf=`show clock | cut -d ' ' -f 1 | cut -d '*' -f 2`
     lock=`Test platform hardware fed switch 1 port $port phy prbs show-lock-stats | grep lock | cut -d ' ' -f 7`
@@ -74,7 +75,7 @@ function GetPRBSStatistics() {
 
 function GetDomPower() {
     interface=$1
-    let port = 48 + $interface
+    let port = $copperports + $interface
     dompower=`sh int te1/1/$interface tra de | tail 2 | head 1 | cut -d ' ' -f 7,8,9`
     echo $dompower
     echo ''
