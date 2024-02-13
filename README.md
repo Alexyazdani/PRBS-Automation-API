@@ -1,7 +1,7 @@
 Alex Yazdani 2023
 
 PRBS-Automation-API
-Example API to be used with Cisco Guest Shell to work with Automation.
+Example API to be used with Cisco IOS Shell to work with Automation.
 
 First few setup lines:
 enable shell commands, enable PRBS, disable logging to not interfere with expected responses, disable exec timeout, instantiate error count and initial timestamp variables.
@@ -27,3 +27,7 @@ Functions:
 
 6. GetDomPower() - 
   Fetch the power from the Digital Optical Monitor.
+
+
+Official Documentation:
+https://www.cisco.com/c/en/us/td/docs/ios/netmgmt/configuration/guide/Convert/IOS_Shell/nm_ios_shell.html
