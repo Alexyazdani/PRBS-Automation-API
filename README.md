@@ -10,7 +10,7 @@ The first example file applies to a rather simple DUT.  The second example file,
 
 Functions:
 
-1. SerPortEnabledState() - 
+1. SetPortEnabledState() - 
   Enable or disable desired port, optional arguement to set port speed for dual rate optics.
   
 2. SetVoltageMargin() - 
@@ -29,5 +29,5 @@ Functions:
   Fetch the power from the Digital Optical Monitor.
 
 
-Official Documentation:
+Official Documentation of Cisco IOS Shell:
 https://www.cisco.com/c/en/us/td/docs/ios/netmgmt/configuration/guide/Convert/IOS_Shell/nm_ios_shell.html
